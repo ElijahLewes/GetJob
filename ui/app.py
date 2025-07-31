@@ -34,7 +34,9 @@ def open_document(path: str) -> None:
 @app.route("/")
 def index():
     jobs = get_jobs()
-    return render_template("index.html", jobs=jobs, word_permission=word_permission)
+    return render_template(
+        "index.html", jobs=jobs, word_permission=word_permission
+    )
 
 
 @app.route("/grant_word_access", methods=["POST"])
@@ -51,7 +53,11 @@ def open_doc(job_id: int, doc_type: str):
         return "Job not found", 404
     _, title, company, _, _ = job
     folder = f"{company}_{title.replace(' ', '')}"
-    file_name = "customized_resume.docx" if doc_type == "resume" else "cover_letter.docx"
+    file_name = (
+        "customized_resume.docx"
+        if doc_type == "resume"
+        else "cover_letter.docx"
+    )
     path = os.path.join("applications", folder, file_name)
     if word_permission:
         open_document(path)

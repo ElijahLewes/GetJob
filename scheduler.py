@@ -22,7 +22,8 @@ def run_job_scraper():
         folder_name = f"{job['company']}_{job['title'].replace(' ', '')}"
         out_dir = os.path.join("applications", folder_name)
         os.makedirs(out_dir, exist_ok=True)
-        with open(os.path.join(out_dir, "job_description.txt"), "w", encoding="utf-8") as f:
+        job_desc_path = os.path.join(out_dir, "job_description.txt")
+        with open(job_desc_path, "w", encoding="utf-8") as f:
             f.write(job.get("description", ""))
 
         customized_resume = customize_resume(job, resume_text)
