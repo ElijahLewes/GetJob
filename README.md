@@ -113,3 +113,45 @@ project_root/
         ├── job_description.txt    # Parsed job text
         ├── customized_resume.docx # Tailored resume
         └── cover_letter.docx      # Tailored cover letter
+
+## Build and Run
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Initialize the database:
+
+```bash
+python -c "from storage.db import init_db; init_db()"
+```
+
+Set the required environment variables. At minimum provide an OpenAI API key and
+path to your base resume text file:
+
+```bash
+export OPENAI_API_KEY="sk-..."
+export BASE_RESUME_PATH="/path/to/resume.txt"
+export BASE_COVER_LETTER_PATH="/path/to/cover_letter.txt"
+```
+
+Start the job scheduler:
+
+```bash
+python main.py
+```
+
+Launch the UI separately if desired:
+
+```bash
+python ui/app.py
+```
+
+The web interface lets you manage saved jobs, mark them as applied, and
+download or open the generated Word documents. You can also upload your
+base resume and cover letter from the **Upload** page.
+
+Generated resumes and cover letters will be written to the `applications/`
+directory in a subfolder named after each job.
