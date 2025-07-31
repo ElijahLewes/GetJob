@@ -113,3 +113,29 @@ project_root/
         ├── job_description.txt    # Parsed job text
         ├── customized_resume.docx # Tailored resume
         └── cover_letter.docx      # Tailored cover letter
+
+## Build and Run
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Initialize the database:
+
+```bash
+python -c "from storage.db import init_db; init_db()"
+```
+
+Start the job scheduler:
+
+```bash
+python main.py
+```
+
+Launch the UI separately if desired:
+
+```bash
+python ui/app.py
+```
