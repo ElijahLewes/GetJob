@@ -135,6 +135,9 @@ path to your base resume text file:
 export OPENAI_API_KEY="sk-..."
 export BASE_RESUME_PATH="/path/to/resume.txt"
 export BASE_COVER_LETTER_PATH="/path/to/cover_letter.txt"
+export JOB_SEARCH_QUERY="python developer"
+export RELEVANCE_THRESHOLD="0.2"
+export JOB_DB_PATH="jobs.db"
 ```
 
 Start the job scheduler:
