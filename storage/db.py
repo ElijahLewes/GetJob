@@ -16,11 +16,11 @@ def init_db():
     conn.close()
 
 
-def insert_job(job: Dict) -> None:
+def insert_job(job: Dict, status: str = "generated") -> None:
     conn = get_connection()
     conn.execute(
         "INSERT INTO jobs (title, company, link, status) VALUES (?, ?, ?, ?)",
-        (job["title"], job.get("company", ""), job.get("link", ""), "generated"),
+        (job["title"], job.get("company", ""), job.get("link", ""), status),
     )
     conn.commit()
     conn.close()
