@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>GetJob - Saved Jobs</title>
+</head>
+<body>
+<h1>Saved Jobs</h1>
+<a href="{{ url_for('upload_files') }}">Upload Base Resume and Cover Letter</a>
+<table border="1" cellpadding="5">
+<tr><th>ID</th><th>Title</th><th>Company</th><th>Status</th><th>Actions</th></tr>
+{% for id, title, company, link, status in jobs %}
+<tr>
+<td>{{ id }}</td>
+<td>{{ title }}</td>
+<td>{{ company }}</td>
+<td>{{ status }}</td>
+<td>
+    <a href="{{ url_for('open_doc', job_id=id, doc_type='resume') }}">Resume</a> |
+    <a href="{{ url_for('open_doc', job_id=id, doc_type='cover') }}">Cover Letter</a> |
+    <a href="{{ url_for('mark_applied', job_id=id) }}">Mark Applied</a> |
+    <a href="{{ url_for('delete_job_route', job_id=id) }}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% if not word_permission %}
+<form action="{{ url_for('grant_word_access') }}" method="post">
+    <button type="submit">Allow opening documents in Word</button>
+</form>
+{% endif %}
+</body>
+</html>
