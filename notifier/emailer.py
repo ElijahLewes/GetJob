@@ -1,6 +1,8 @@
 from email.message import EmailMessage
+
 import smtplib
 from config import settings
+
 
 
 def send_email(to_addr: str, subject: str, body: str) -> None:
