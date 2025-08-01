@@ -1,3 +1,4 @@
+
 import os
 import schedule
 import time
@@ -33,8 +34,9 @@ def run_job_scraper():
         insert_job(job, status="generated")
 
 
+
 def run():
-    run_job_scraper()
+
     schedule.every().hour.do(run_job_scraper)
     while True:
         schedule.run_pending()

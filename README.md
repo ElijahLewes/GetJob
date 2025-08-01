@@ -131,7 +131,7 @@ python -c "from storage.db import init_db; init_db()"
 Set the required environment variables. At minimum provide an OpenAI API key and
 path to your base resume text file:
 
-```bash
+
 export OPENAI_API_KEY="sk-..."
 export BASE_RESUME_PATH="/path/to/resume.txt"
 export BASE_COVER_LETTER_PATH="/path/to/cover_letter.txt"
@@ -139,6 +139,7 @@ export JOB_SEARCH_QUERY="python developer"
 export RELEVANCE_THRESHOLD="0.2"
 export JOB_DB_PATH="jobs.db"
 ```
+
 
 Start the job scheduler:
 

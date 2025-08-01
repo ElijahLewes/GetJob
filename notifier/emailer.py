@@ -1,6 +1,7 @@
 from email.message import EmailMessage
 
 
+
 def send_email(to_addr: str, subject: str, body: str) -> None:
     msg = EmailMessage()
     msg["Subject"] = subject
