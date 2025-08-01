@@ -35,8 +35,8 @@ def run_job_scraper():
 
 
 
-
 def run():
+
     schedule.every().hour.do(run_job_scraper)
     while True:
         schedule.run_pending()

@@ -1,4 +1,5 @@
 
+
 from typing import Dict
 from gpt.client import generate_text
 
@@ -25,7 +26,7 @@ def generate_cover_letter(
         f"Base cover letter:\n{base_letter}\n"
         f"Use the following resume information as context:\n{resume_text}"
     )
-    
+
 from gpt.client import generate_text
 from typing import Dict
 
@@ -33,4 +34,4 @@ from typing import Dict
 def customize_resume(job: Dict, resume_text: str) -> str:
     prompt = f"Customize the following resume for the job: {job['title']} at {job['company']}\n{resume_text}"
 
-    return generate_text(prompt)
+

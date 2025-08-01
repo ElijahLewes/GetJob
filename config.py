@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-g
+
 @dataclass
 class Settings:
     openai_api_key: str = os.getenv("OPENAI_API_KEY", "")

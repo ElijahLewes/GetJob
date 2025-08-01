@@ -88,4 +88,3 @@ def upload_files():
             cover_file.save(settings.base_cover_letter_path)
         return redirect(url_for("index"))
     return render_template("upload.html")
-

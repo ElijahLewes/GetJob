@@ -31,7 +31,9 @@ def get_jobs():
     cur = conn.execute("SELECT id, title, company, link, status FROM jobs")
     rows = cur.fetchall()
     conn.close()
+
     return rows<<<<<<< 27c411-codex/build-application-from-readme-instructions
+
 
 
 def get_job(job_id: int):
