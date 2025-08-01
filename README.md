@@ -128,6 +128,7 @@ Initialize the database:
 python -c "from storage.db import init_db; init_db()"
 ```
 
+
 Set the required environment variables. At minimum provide an OpenAI API key and
 path to your base resume text file:
 
@@ -140,6 +141,7 @@ export RELEVANCE_THRESHOLD="0.2"
 export JOB_DB_PATH="jobs.db"
 ```
 
+
 Start the job scheduler:
 
 ```bash
@@ -151,10 +153,10 @@ Launch the UI separately if desired:
 ```bash
 python ui/app.py
 ```
-
 The web interface lets you manage saved jobs, mark them as applied, and
 download or open the generated Word documents. You can also upload your
 base resume and cover letter from the **Upload** page.
 
 Generated resumes and cover letters will be written to the `applications/`
 directory in a subfolder named after each job.
+

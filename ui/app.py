@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, redirect, url_for, send_file
 import os
 import sys
@@ -88,6 +89,3 @@ def upload_files():
         return redirect(url_for("index"))
     return render_template("upload.html")
 
-
-if __name__ == "__main__":
-    app.run(debug=True)

@@ -6,6 +6,9 @@ def write_documents(
     job: Dict, resume_text: str, cover_letter_text: str, out_dir: str
 ) -> None:
     """Save customized resume and cover letter to Word documents."""
+=======
+def write_documents(job: Dict, resume_text: str, cover_letter_text: str, out_dir: str) -> None:
+
     doc = Document()
     doc.add_paragraph(resume_text)
     doc.save(f"{out_dir}/customized_resume.docx")

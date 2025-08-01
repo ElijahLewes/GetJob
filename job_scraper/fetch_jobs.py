@@ -1,4 +1,5 @@
 from typing import List, Dict
+
 import requests
 
 
@@ -34,4 +35,4 @@ def fetch_jobs(query: str = "") -> List[Dict]:
             "link": "https://example.com",
             "description": "Example job description",
         }
-    ]
+

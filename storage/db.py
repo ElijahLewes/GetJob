@@ -21,7 +21,7 @@ def insert_job(job: Dict, status: str = "generated") -> None:
     conn.execute(
         "INSERT INTO jobs (title, company, link, status) VALUES (?, ?, ?, ?)",
         (job["title"], job.get("company", ""), job.get("link", ""), status),
-    )
+
     conn.commit()
     conn.close()
 
@@ -31,7 +31,7 @@ def get_jobs():
     cur = conn.execute("SELECT id, title, company, link, status FROM jobs")
     rows = cur.fetchall()
     conn.close()
-    return rows
+    return rows<<<<<<< 27c411-codex/build-application-from-readme-instructions
 
 
 def get_job(job_id: int):
@@ -57,3 +57,4 @@ def delete_job(job_id: int) -> None:
     conn.execute("DELETE FROM jobs WHERE id=?", (job_id,))
     conn.commit()
     conn.close()
+

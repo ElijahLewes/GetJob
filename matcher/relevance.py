@@ -1,4 +1,5 @@
 from typing import Dict
+
 import re
 
 
@@ -15,3 +16,7 @@ def score_job_against_resume(job: Dict, resume_text: str) -> float:
     if not job_tokens:
         return 0.0
     return len(job_tokens & resume_tokens) / len(job_tokens)
+
+
+
+
